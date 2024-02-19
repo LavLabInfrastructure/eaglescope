@@ -12,7 +12,7 @@ RUN npm install
 RUN npm run-script build
 RUN mkdir -p /var/www/html/
 RUN mv /source/dist/* /var/www/html
-WORKDIR /var/www/html/
+WORKDIR /var/www/html/fdsa
 
 EXPOSE 1180
 CMD http-server -p 1180
