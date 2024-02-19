@@ -28,7 +28,7 @@ class DownloadButton extends PureComponent {
     data.forEach((rowArray) => {
     const entriesArray = Object.entries(rowArray);
     const row = entriesArray.join(',');
-    csvContent += `${row}\r\n`;
+    csvContent += `${row}\n`;
     });
     const encodedUri = encodeURI(csvContent);
     const csvlink = document.createElement('a');
