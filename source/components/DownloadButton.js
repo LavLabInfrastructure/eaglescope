@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -41,8 +40,8 @@ class DownloadButton extends PureComponent {
     const csvlink = document.createElement('a');
     csvlink.href = encodedUri;
     csvlink.download = this.props.title || 'download.csv';
-    document.body.appendChild(csvlink); // Required for FF
-    csvlink.click(); // This will download the data file named "my_data.csv".
+    document.body.appendChild(csvlink);
+    csvlink.click();
     document.body.removeChild(csvlink);
     } 
   }
