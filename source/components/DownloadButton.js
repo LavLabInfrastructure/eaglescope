@@ -25,9 +25,16 @@ class DownloadButton extends PureComponent {
     } else {
      // CSV
     let csvContent = 'data:text/csv;charset=utf-8,';
+    let i = 0;
     data.forEach((rowArray) => {
-    const entriesArray = Object.entries(rowArray);
-    const row = entriesArray.join(',');
+      if (i == 0) {
+        const keyArray = Object.keys(rowArray);
+        const header = keyArray.join(',');
+        csvContent += `${header}\n`;
+        i++;
+      }
+    const valueArray = Object.values(rowArray);
+    const row = valueArray.join(',');
     csvContent += `${row}\n`;
     });
     const encodedUri = encodeURI(csvContent);
