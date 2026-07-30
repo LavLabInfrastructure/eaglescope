@@ -66,8 +66,14 @@ function VisGridItemContent(props) {
       );
   }
 
+  const handleMouseDown = (e) => {
+    e.stopPropagation(); // Prevent drag event from bubbling up to the parent grid item
+  };
+
   return (
-    <div className="vis-grid-item-content">
+    // override a11y check, as mousedown is explicitly NOT allowing special interaction here.
+    /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
+    <div className="vis-grid-item-content" onMouseDown={handleMouseDown}>
       <Suspense fallback={<div>Loading...</div>}>{component}</Suspense>
     </div>
   );

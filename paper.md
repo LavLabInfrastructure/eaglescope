@@ -9,6 +9,7 @@ tags:
 authors:
   - name: Ryan Birmingham
     orcid: 0000-0002-7943-6346
+    corresponding: true
     equal-contrib: true
     affiliation: 1
   - name: Nan Li
@@ -17,12 +18,12 @@ authors:
     orcid: 0000-0002-3975-4809
   - name: Tony Pan
     affiliation: 1
+    orcid: 0000-0001-7945-6534
   - name: Yahia Zakaria
-    corresponding: true
     orcid: 0009-0001-0705-4082
     affiliation: 2
 affiliations:
- - name: Emory Univeristy, USA
+ - name: Emory University, United States of America
    index: 1
  - name: Independent Researcher, Egypt
    index: 2
@@ -43,7 +44,7 @@ To create a dashboard, users simply need to create a file specifying the data so
 
 # State of the Field
 
-Cohort definition is an essential aspect of both retrospective and prospective studies. Different workflows are used to define cohorts depending on the nature and needs of a study. For example, in cases where the criteria is known, retrospective data for the criteria can be downloaded using user-focused natural language tools such as Criteria2Query [@Yuan2019]. 
+Cohort definition is an essential aspect of both retrospective and prospective studies. Different workflows are used to define cohorts depending on the nature and needs of a study. For example, in cases where the criteria are known, retrospective data for the criteria can be downloaded using user-focused natural language tools such as Criteria2Query [@Yuan2019]. 
 
 In addition to statistical and code methods, visual tools can be and are used in cohort studies. A tool called Composer [@Rogers2019-ya] allows for surgeons and patients to visually interpret results of cohort studies. Some tools, such as CAVA (Cohort Analysis via Visual Analytics) [@Zhang2015-kd] can be used for both batch analytics and interactive analytics for exploratory cohort analysis for data stored in its own relational database.
 

@@ -9,6 +9,10 @@ Eaglescope is a configurable code-free interactive visualization and cohort defi
 
 ## Development
 
+Reporting Issues: If you find a bug or have a feature request, please open an issue on [Eaglescope's GitHub Issues page](https://github.com/sharmalab/eaglescope/issues). Be sure to provide a clear description of the problem, steps to reproduce, and any relevant screenshots.
+
+Pull Requests: If you’d like to propose additions, changes, or improvements, please submit a [pull request](https://github.com/sharmalab/eaglescope/pulls) against the main branch. Make sure to provide a clear description of your changes and any relevant context. Screenshots for visual changes are appreicated (before and after), as well as any tests performed.
+
 Please see our [code of conduct](code_of_conduct.md) for the expectations for all open source community members.
 
 Install dependencies by running `npm install`
@@ -19,7 +23,7 @@ Build ./dist for use with a static web server by running `npm run build`
 
 To run code style checks, run `npm run lint` or to also try to automatically fix some issues, run `npm run lint:fix`.
 
-To run unit and functional tests (also run automatically [using github actions](.github/workflows/smoke_test.yml), run `npm run test` which runs the tests in [this folder](./tests).
+To run unit and functional tests, which are also run automatically [using github actions](.github/workflows/jest_tests.yml), run `npm run test` which runs the tests in [this folder](./tests).
 
 
 # Setup and Configuration
@@ -110,6 +114,22 @@ Each Eaglescope dashboard needs a configuration url which contains global inform
    <td>“csv” or “json”
    </td>
   </tr>
+  <tr>
+   <td>LAYOUT
+   </td>
+   <td>If set, split visualizations with a matching "designation" will be put in a special row/column on top/left.
+   </td>
+   <td>"left", or "top": default behavior is no split.
+   </td>
+  </tr>
+  <tr>
+   <td>LAYOUT_SIZE
+   </td>
+   <td>When LAYOUT is set, the size of the top/left section across that dimension.
+   </td>
+   <td>css-like string; default is "300px"
+   </td>
+  </tr>
 </table>
 
 
@@ -175,11 +195,27 @@ Additionally, the field “VISUALIZATION_VIEW_CONFIGURATION” contains a list o
    </td>
   </tr>
   <tr>
+   <td>expandWidth
+   </td>
+   <td>If truthy, override width of chart to num cols in the layout.
+   </td>
+   <td>42
+   </td>
+  </tr>
+  <tr>
    <td>priority
    </td>
    <td>When rendering, how to order. Higher priority floats up.
    </td>
    <td>42
+   </td>
+  </tr>
+  <tr>
+   <td>designation
+   </td>
+   <td>When LAYOUT is set to split, set to "left" or "top" to put in the non-default area; don't set to leave in the main area. Do not mismatch left and top across LAYOUT and designation, or affected charts not render at all.
+   </td>
+   <td>left
    </td>
   </tr>
 </table>
